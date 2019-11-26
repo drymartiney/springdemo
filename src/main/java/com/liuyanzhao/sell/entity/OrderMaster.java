@@ -33,6 +33,7 @@ public class OrderMaster {
     //买家微信Openid
     private String buyerOpenId;
 
+    private String buyerPhone;
     //订单总金额
     private BigDecimal orderAmount;
 
