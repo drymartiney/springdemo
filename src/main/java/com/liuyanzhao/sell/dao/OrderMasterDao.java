@@ -2,9 +2,9 @@ package com.liuyanzhao.sell.dao;
 
 import com.liuyanzhao.sell.entity.OrderMaster;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import java.awt.print.Pageable;
 
 /**
  * Anthor: chen
@@ -12,5 +12,5 @@ import java.awt.print.Pageable;
  * Time: 9:53
  */
 public interface OrderMasterDao extends JpaRepository<OrderMaster,String> {
-    //Page<OrderMaster> findByBuyerOpenid(String buyerOpenid, Pageable pageable);
+    Page<OrderMaster> findByBuyerOpenid(String buyerOpenid, Pageable pageable);
 }

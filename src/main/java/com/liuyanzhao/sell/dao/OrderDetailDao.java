@@ -3,7 +3,6 @@ package com.liuyanzhao.sell.dao;
 import com.liuyanzhao.sell.entity.OrderDetail;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import java.awt.print.Pageable;
 import java.util.List;
 
 /**
@@ -13,5 +12,5 @@ import java.util.List;
  */
 public interface OrderDetailDao extends JpaRepository<OrderDetail,String> {
 
-    //List<OrderDetail> findByBuyerOpenid(String buyerOpenid, Pageable pageable);
+    List<OrderDetail> findByOrOrderId(String orderId);
 }

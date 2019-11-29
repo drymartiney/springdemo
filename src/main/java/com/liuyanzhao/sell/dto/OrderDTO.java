@@ -1,13 +1,11 @@
-package com.liuyanzhao.sell.entity;
+package com.liuyanzhao.sell.dto;
 
+import com.liuyanzhao.sell.entity.OrderDetail;
 import com.liuyanzhao.sell.enums.OrderStatusEnum;
 import com.liuyanzhao.sell.enums.PayStatusEnum;
 import lombok.Data;
-import org.hibernate.annotations.DynamicUpdate;
-import org.springframework.data.annotation.Transient;
 
 import javax.persistence.Column;
-import javax.persistence.Entity;
 import javax.persistence.Id;
 import java.math.BigDecimal;
 import java.util.Date;
@@ -15,16 +13,14 @@ import java.util.List;
 
 /**
  * Anthor: chen
- * Date: 2019/11/18
- * Time: 17:44
+ * Date: 2019/11/29
+ * Time: 15:06
+ * 数据传输层
  */
-@Entity
-@DynamicUpdate
 @Data
-public class OrderMaster {
+public class OrderDTO {
 
     //订单Id
-    @Id
     private String orderId;
 
     //买家姓名
@@ -42,10 +38,10 @@ public class OrderMaster {
     private BigDecimal orderAmount;
 
     //订单状态，默认为新下单
-    private Integer orderStatus = OrderStatusEnum.NEW.getCode();
+    private Integer orderStatus;
 
     //支付状态，默认为0未支付
-    private Integer payStatus= PayStatusEnum.WAIT.getCode();
+    private Integer payStatus;
 
     //创建时间
     @Column(insertable = false,updatable = false)
@@ -54,7 +50,6 @@ public class OrderMaster {
     //更新时间
     @Column(insertable = false)
     private Date updateTime;
-//
-//    @Transient
-//    private List<OrderDetail> orderDetailList;
+
+    private List<OrderDetail> orderDetailList;
 }

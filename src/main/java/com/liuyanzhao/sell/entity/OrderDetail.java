@@ -28,7 +28,7 @@ public class OrderDetail {
 
     private String productName;
 
-    private BigDecimal prodcutPrice;
+    private BigDecimal productPrice;
 
     private Integer productQuantity;
 
