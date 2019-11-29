@@ -3,6 +3,7 @@ package com.liuyanzhao.sell.entity;
 import lombok.Data;
 import org.hibernate.annotations.DynamicUpdate;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import java.math.BigDecimal;
@@ -42,9 +43,11 @@ public class ProductInfo {
     private Integer categoryType;
 
     //创建时间
+    @Column(insertable = false)
     private Date createTime;
 
     //更新时间
+    @Column(insertable = false)
     private Date updateTime;
 
 

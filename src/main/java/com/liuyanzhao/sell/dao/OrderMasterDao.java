@@ -12,5 +12,5 @@ import java.awt.print.Pageable;
  * Time: 9:53
  */
 public interface OrderMasterDao extends JpaRepository<OrderMaster,String> {
-    Page<OrderMaster> findByBuyerOpenId(String buyerOpenid, Pageable pageable);
+    //Page<OrderMaster> findByBuyerOpenid(String buyerOpenid, Pageable pageable);
 }

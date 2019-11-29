@@ -3,10 +3,12 @@ package com.liuyanzhao.sell.entity;
 import lombok.Data;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.print.DocFlavor;
 import java.math.BigDecimal;
+import java.util.Date;
 
 /**
  * Anthor: chen
@@ -31,4 +33,10 @@ public class OrderDetail {
     private Integer productQuantity;
 
     private String  productIcon;
+
+    @Column(insertable = false,updatable = false)
+    private Date createTime;
+
+    @Column(insertable = false)
+    private Date update_time;
 }

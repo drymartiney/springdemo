@@ -5,6 +5,7 @@ import com.liuyanzhao.sell.enums.PayStatusEnum;
 import lombok.Data;
 import org.hibernate.annotations.DynamicUpdate;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import java.math.BigDecimal;
@@ -28,12 +29,13 @@ public class OrderMaster {
     private String buyerName;
 
     //买家手机号
+    private String buyerPhone;
+
     private String buyerAddress;
 
     //买家微信Openid
-    private String buyerOpenId;
+    private String buyerOpenid;
 
-    private String buyerPhone;
     //订单总金额
     private BigDecimal orderAmount;
 
@@ -44,8 +46,12 @@ public class OrderMaster {
     private Integer payStatus= PayStatusEnum.WAIT.getCode();
 
     //创建时间
+    @Column(insertable = false,updatable = false)
     private Date createTime;
 
     //更新时间
+    @Column(insertable = false)
     private Date updateTime;
+
+
 }

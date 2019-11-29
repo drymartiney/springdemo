@@ -30,16 +30,16 @@ public class ProductInfoDaoTest {
     @Test
     public void saveTest(){
         ProductInfo productInfo=new ProductInfo();
-        productInfo.setProductId("12345");
-        productInfo.setProductName("怡宝矿泉水");
+        productInfo.setProductId("1231245");
+        productInfo.setProductName("怡宝矿泉水1213");
         productInfo.setProductPrice(new BigDecimal(2.50));
-        productInfo.setProductStock(100);
+        productInfo.setProductStock(1001231);
         productInfo.setProductDescription("村天然，有点甜");
         productInfo.setProductIcon("http://xxx.com/xx.jpg");
-        productInfo.setProductStatus(0);
-        productInfo.setCategoryType(4);
-        productInfo.setCreateTime(new Date());
-        productInfo.setUpdateTime(new Date());
+        productInfo.setProductStatus(1312);
+        productInfo.setCategoryType(4123);
+//        productInfo.setCreateTime(new Date());
+//        productInfo.setUpdateTime(new Date());
         ProductInfo result= dao.save(productInfo);
         Assert.assertNotNull(result);
     }

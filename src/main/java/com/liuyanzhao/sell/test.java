@@ -1,6 +1,7 @@
 package com.liuyanzhao.sell;
 
-import java.lang.reflect.Field;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Anthor: chen
@@ -8,16 +9,17 @@ import java.lang.reflect.Field;
  * Time: 12:38
  */
 public class test {
-    public int[] a={1,2,3};
     public static void main(String[] args) {
-        try {
-            Class<?> clazz = Class.forName("com.liuyanzhao.sell.test");
-            test p = (test) clazz.newInstance();
-            Field filed = clazz.getField("a");
-            Class type = filed.getType();
-            System.out.println(type);
-        } catch (Exception e) {
-            e.printStackTrace();
+        List<List<String>> data=new ArrayList<>();
+        List<String> data1=new ArrayList<>();
+        List<String> data2=new ArrayList<>();
+        data.add(data1);
+        data.add(data2);
+        int x=0;
+        for (int i=0;i<10;i++){
+            x=i%2;
+            data.get(x).add("num"+i);
         }
+        System.out.println(data);
     }
 }

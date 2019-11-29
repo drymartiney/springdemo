@@ -2,9 +2,11 @@ package com.liuyanzhao.sell.dao;
 
 import com.liuyanzhao.sell.entity.OrderMaster;
 import org.junit.Assert;
-import org.junit.jupiter.api.Order;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
+import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit4.SpringRunner;
 
 import java.math.BigDecimal;
 
@@ -15,7 +17,9 @@ import static org.junit.jupiter.api.Assertions.*;
  * Date: 2019/11/26
  * Time: 10:33
  */
-class OrderDetailDaoTest {
+@RunWith(SpringRunner.class)
+@SpringBootTest
+public class OrderMasterDaoTest {
 
     @Autowired
     private OrderMasterDao orderMasterDao;
@@ -27,13 +31,19 @@ class OrderDetailDaoTest {
         orderMaster.setBuyerName("师兄");
         orderMaster.setBuyerAddress("慕课网");
         orderMaster.setBuyerPhone("12312341234");
-        orderMaster.setBuyerOpenId("110110");
+        orderMaster.setBuyerOpenid("110110");
         orderMaster.setOrderAmount(new BigDecimal(2.3));
 
         OrderMaster result=orderMasterDao.save(orderMaster);
         Assert.assertNotNull(result);
     }
+
     @Test
-    void findByOrOrderId() {
+    public void updateTest(){
+        OrderMaster orderMaster=orderMasterDao.findById("123456").orElse(null);
+        orderMaster.setBuyerName("师兄12");
+
+        OrderMaster result=orderMasterDao.save(orderMaster);
+        Assert.assertNotNull(result);
     }
 }
