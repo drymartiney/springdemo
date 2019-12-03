@@ -19,3 +19,7 @@ server:
 # #   path: /var/log/tomcat
 #  file: E:\log4j\sell.log
 #  level: debug
+
+wechat:
+  mpAppId: 12345
+  mpAppSecret: 123456
