@@ -23,3 +23,7 @@ server:
 wechat:
   mpAppId: 12345
   mpAppSecret: 123456
+  mchId: 123456789
+  mchKey: 123456798
+  keyPath: /x/x/h5.p12
+  notifyUrl: http://sell.natapp4
